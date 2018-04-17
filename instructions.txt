@@ -1,0 +1,12 @@
+Kriterier för godkänt: 
+[]Appen ska visa en lista av objekt
+[]varje objekt ska kunna markeras
+[]varje objekt ska kunna ändras
+[]ni ska skriva minst två komponenter utöver App och skicka data till den med props
+[]appen ska ha en tydlig design - man ska förstå lätt hur appen är tänkt att användas
+[x]appen ska versionshanteras med Git
+
+Kriterier för väl godkänt:
+[]ni ska skriva minst tre komponenter
+[]minst en komponent ska skicka tillbaka data till parent component med $emit
+[]appen ska ha en intuitiv design - den ska vara lättanvänd
