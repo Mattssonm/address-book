@@ -1,21 +1,24 @@
 <template>
 	<div>
-    <button @click="aFunction">ClickMe</button>
+    <ul>
+      <li @click="selectedInfo(item.name)" v-for="item in address">{{item.name}}</li>
+    </ul>
 	</div>
 </template>
 
 <script>
 export default {
-  props: ["addressList"],
-  props: ["name"],
+  props: ['address'],
 	data: function() {
 		return {
       
 		};
 	},  // data
   methods: {
-    aFunction: function () {
-      console.log(this.addressList);
+    selectedInfo: function(name) {
+      this.$emit("send-select", {
+        name: name
+      });
     }
   }
 }

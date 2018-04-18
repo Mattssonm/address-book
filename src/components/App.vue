@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <list-of-addresses v-bind:addressList="addressList"/>
-    <detailed-info/>
-    <add-address/>
+    <list-of-addresses v-on:send-select="recieveSelection" v-bind:address="addressList"/>
+    <detailed-info v-bind:selected="selectedAddress"/>
+    <add-address v-on:send-address="recieveAddress"/>
   </div>
 </template>
 
@@ -40,11 +40,28 @@ export default {
           phone: "0731223512",
           email: "Olof.Nilsson@gmail.com"
         }
-      ]
+      ],
+      selectedAddress: {
+          name: "",
+          address: {
+            street: "",
+            zip: "",
+            city: ""
+          },
+          phone: "",
+          email: ""
+        }
 		};
 	},  // data
 	methods: {
-
+    recieveSelection: function(obj) {
+      this.selectedAddress = this.addressList.find(function(element) {
+        return element.name == obj.name;
+      });
+    },
+    recieveAddress: function(obj) {
+      this.addressList.push(obj);
+    }
   } //methods
 } //export
 
