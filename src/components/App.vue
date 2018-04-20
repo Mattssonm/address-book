@@ -83,6 +83,10 @@ export default {
     
     updateAddress: function(obj) {
       this.addressList[this.selectedIndex] = obj;
+      this.updateListOfAddresses();
+    },
+    updateListOfAddresses: function() {
+      //do something to update list
     },
     toggleAddAddress: function(event) {
       if (this.showAddAddress) {
@@ -91,7 +95,9 @@ export default {
         this.showAddAddress = true;
       }
     }
-  } //methods
+  }, //methods
+  watch: { 
+  }
 } //export
 
 </script>

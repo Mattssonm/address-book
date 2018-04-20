@@ -79,7 +79,6 @@ export default {
   }, //methods
   watch: { 
     selected: function(newVal, oldVal) {
-      console.log('Prop changed: ', newVal, ' | was: ', oldVal)
       this.updateInputValues();
     }
   } 

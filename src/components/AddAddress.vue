@@ -1,5 +1,6 @@
 <template>
 	<div>
+    <h3>Add Address</h3>
 		<input v-model="newAddress.name" type="text" placeholder="name"/>
     <input v-model="newAddress.address.street" type="text" placeholder="street"/>
     <input v-model="newAddress.address.zip" type="text" placeholder="zip"/>
@@ -51,10 +52,11 @@ export default {
 
 <style scoped>
   div {
-    margin-bottom: 30px;
+    margin: 0 0 50px;
   }
   input {
     border-radius: 4px;
+    margin-bottom: 4px;
     font-family: Gandhi;
     border-right: solid 1px gray;
     
