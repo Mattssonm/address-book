@@ -1,0 +1,67 @@
+@font-face {
+  font-family: Gandhi;
+  src: url(GandhiSerif-Regular.otf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Gandhi;
+}
+
+body {
+  background-color: #ad8348;
+}
+
+main {
+  background-color: #f8f2e2;
+  max-width: 600px;
+  padding: 3px;
+  border: 5px solid rgb(50, 50, 50);
+  border-radius: 2px;
+  margin: 0 auto;
+};
+
+h1 {
+  text-align: center;
+}
+
+.button {
+  background-color: #d1aa75;
+  border-radius: 3px;
+  padding-top: 4px;
+  position: absolute;
+  bottom: 10px;
+  font-family: Gandhi;
+}
+
+.rightButton {
+  right: 10px;
+}
+
+#app {
+  font-family: Gandhi;
+  background-color: #f8f2e2;
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px;
+  padding-bottom: 0;
+  display: flex;  
+}
+
+.page {
+  padding: 10px 0 10px 20px;
+  width: 50%;
+  margin: 0;
+  position: relative;
+}
+
+#leftPage {
+  display: inline-block;
+  border-right: solid 2px gray;
+  background-image: linear-gradient(left, #f8f2e2 92%, #ada696 100%)
+}
+
+#rightPage {
+  background-image: linear-gradient(right, #f8f2e2 92%, #ada696 100%)
+}
+

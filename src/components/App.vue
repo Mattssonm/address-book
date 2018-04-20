@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <list-of-addresses v-on:send-select="recieveSelection" v-bind:address="addressList"/>
-    <detailed-info v-bind:selected="selectedAddress"/>
-    <add-address v-on:send-address="recieveAddress"/>
+    <div id="leftPage" class="page">
+      <list-of-addresses v-on:send-select="recieveSelection" v-bind:address="addressList"/>
+      <button @click="toggleAddAddress" class="button">New</button>
+    </div>
+    <div id="rightPage" class="page">
+      <add-address v-if="showAddAddress" v-on:send-address="recieveAddress" v-on:close-add-address="toggleAddAddress"/>
+      <detailed-info v-else v-bind:selected="selectedIndex" v-bind:addressList="addressList" v-on:update-address="updateAddress"/>
+    </div>
   </div>
 </template>
 
@@ -39,28 +44,52 @@ export default {
           },
           phone: "0731223512",
           email: "Olof.Nilsson@gmail.com"
+        },
+        {
+          name: "Evert Ragnhildsson",
+          address: {
+            street: "Kungsgatan 22",
+            zip: "41321",
+            city: "Malmö"
+          },
+          phone: "0731222351",
+          email: "Evert@gmail.com"
+        },
+        {
+          name: "Kerstin Nilsson",
+          address: {
+            street: "Valandsgatan 23",
+            zip: "41123",
+            city: "Göteborg"
+          },
+          phone: "0731231419",
+          email: "Kerstin.Nilsson@gmail.com"
         }
       ],
-      selectedAddress: {
-          name: "",
-          address: {
-            street: "",
-            zip: "",
-            city: ""
-          },
-          phone: "",
-          email: ""
-        }
+      selectedIndex: 0,
+      showAddAddress: false
 		};
 	},  // data
 	methods: {
     recieveSelection: function(obj) {
-      this.selectedAddress = this.addressList.find(function(element) {
+      this.selectedIndex = this.addressList.findIndex(function(element) {
         return element.name == obj.name;
       });
+
     },
     recieveAddress: function(obj) {
       this.addressList.push(obj);
+    }, 
+    
+    updateAddress: function(obj) {
+      this.addressList[this.selectedIndex] = obj;
+    },
+    toggleAddAddress: function(event) {
+      if (this.showAddAddress) {
+        this.showAddAddress = false
+      } else {
+        this.showAddAddress = true;
+      }
     }
   } //methods
 } //export
@@ -69,20 +98,13 @@ export default {
 
 <!-- CSS libraries -->
 <style src="normalize.css/normalize.css"></style>
-
+<style src="../main.css"></style>
 <!-- Global CSS -->
 <style>
-  #app  {
-    text-align: center;
-  }
 
 </style>
 
 <!-- Scoped component css -->
 <!-- It only affect current component -->
 <style scoped>
-  #app {
-    width: 90%;
-    margin: auto;
-  }
 </style>

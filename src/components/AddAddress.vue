@@ -7,7 +7,8 @@
     <input v-model="newAddress.phone" type="text" placeholder="phone"/>
     <input v-model="newAddress.email" type="text" placeholder="email"/>
     <br>
-		<input @click="addAddress" type="button" value="Add Address" />
+    <button @click="addAddress" class="button leftButton">Add</button>
+    <button @click="closeAddAddress" class="button rightButton">Close</button>
 	</div>
 </template>
 
@@ -40,10 +41,22 @@ export default {
           email: this.newAddress.email
       };
       this.$emit("send-address", obj);
+    },
+    closeAddAddress: function() {
+      this.$emit("close-add-address")
     }
   }
 }
 </script>
 
 <style scoped>
+  div {
+    margin-bottom: 30px;
+  }
+  input {
+    border-radius: 4px;
+    font-family: Gandhi;
+    border-right: solid 1px gray;
+    
+  }
 </style>

@@ -1,12 +1,25 @@
+Ni ska skapa en webbapp som använder Vue och Node.js. Den ska lämnas in senast 20/4.
+Uppgiften ska utföras två och två. Inlämning sker genom att redovisa för läraren på lektionstid. Ni ska använda git för versionshantering. Appen ska i första hand redovisas på lektionstid. Men om inlämning inte kan ske på lektionstid så ska ni skicka en länk till repot på GitHub. Ni kan också prova now eller Heroku för att publicera appen.
+
+Appen ska innehålla en lista med element som man kan redigera. Till exempel kan ni göra en adressbok. Man ska kunna klicka på ett element i listan för att redigera det, med hjälp av textrutor som skapas dynamiskt. Man ska också kunna markera ett element genom att klicka på det. Någon annanstans på webbsidan ska ni visa information om det senast markerade elementet.
+
+Ni ska göra detta med hjälp av minst två egna komponenter.
+
+Låt en annan grupp provköra er app, så märker ni om ni har en bra design.
+
+
+Det är inte tillåtet att använda vanlig DOM-manipulation i den här laborationen, eftersom den handlar om Vue, som ersätter det med sin egen syntax. Globala variabler är inte heller tillåtna, använd data-objekten i respektive komponent i stället.
+
+
 Kriterier för godkänt: 
-[]Appen ska visa en lista av objekt
-[]varje objekt ska kunna markeras
-[]varje objekt ska kunna ändras
-[]ni ska skriva minst två komponenter utöver App och skicka data till den med props
+[x]Appen ska visa en lista av objekt
+[x]varje objekt ska kunna markeras
+[x]varje objekt ska kunna ändras
+[x]ni ska skriva minst två komponenter utöver App och skicka data till den med props
 []appen ska ha en tydlig design - man ska förstå lätt hur appen är tänkt att användas
 [x]appen ska versionshanteras med Git
 
 Kriterier för väl godkänt:
-[]ni ska skriva minst tre komponenter
-[]minst en komponent ska skicka tillbaka data till parent component med $emit
+[x]ni ska skriva minst tre komponenter
+[x]minst en komponent ska skicka tillbaka data till parent component med $emit
 []appen ska ha en intuitiv design - den ska vara lättanvänd
