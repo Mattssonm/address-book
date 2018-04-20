@@ -1,6 +1,6 @@
 # address-book
 
-> A digital address book created with vue
+> A simple CRUD address book made with Vue.js and Node.js
 
 ## Commands
 
